@@ -1,0 +1,165 @@
+* {
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+
+body {
+    background-color: #111;
+}
+
+.auth-section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+}
+
+.container {
+    width: 380px;
+    height: 670px;
+    position: relative;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 0 20px #f1ae5d58;
+}
+
+.form-box {
+    width: 100%;
+    height: 100%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.button-box {
+    width: 220px;
+    margin-bottom: 35px;
+    position: relative;
+    box-shadow: 0 0 20px 9px #f1ae5d58;
+    border-radius: 30px;
+    display: flex;
+}
+
+.toggle-btn {
+    padding: 10px;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline: none;
+    position: relative;
+    color: #000000;
+    flex: 1;
+    z-index: 1;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#btn {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 110px;
+    height: 100%;
+    background: linear-gradient(to right, #fab764, #f6a43e);
+    border-radius: 30px;
+    transition: .5s;
+}
+
+.input-group {
+    width: 100%;
+    transition: .5s;
+    display: none;
+}
+
+.input-group.active {
+    display: block;
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px 0;
+    margin: 5px 0;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    outline: none;
+    background: transparent;
+    color: #ffffff;
+}
+
+.input-field::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto 0;
+    background: linear-gradient(to right, #fab764, #f6a43e);
+    border: 0;
+    outline: none;
+    border-radius: 30px;
+    color: #000000;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+/* Diseño del Select de Rol de Staff */
+.RolStaff {
+    width: 100%;
+    padding: 10px 0;
+    margin: 5px 0;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    outline: none;
+    background: transparent;
+    color: #fff;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.RolStaff:focus {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.RolStaff option {
+    background-color: #111; /* Fondo de las opciones */
+    color: #fff;
+}
+
+/* Flecha personalizada para select */
+.RolStaff {
+    position: relative;
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQiIGhlaWdodD0iOCIgdmlld0JveD0iMCAwIDE0IDgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTEgMUwxMiA0TDExLjUgNkwyLjUgNkgxLjVMMSAxeiIgZmlsbD0iI2ZmZiIvPjwvc3ZnPg==');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px;
+}
+
+#butPlayer {
+    color: #000;
+}
+
+#butStaff {
+    color: #edededcd;
+}

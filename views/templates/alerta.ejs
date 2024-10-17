@@ -1,0 +1,21 @@
+
+<% if (typeof alerta !== 'undefined' && alerta.activa) { %>
+    <div id="alertaContainer" class="alerta">
+        <div class="alerta-interna">
+            <% if (alerta.bien == "Si") { %>
+                <i class='bx bxs-check-circle alerta-imagen' style='color:#f1af5d' ></i>
+            <% }else { %>
+                <i class='bx bxs-error alerta-imagen' style='color:#f1af5d' ></i>
+            <% } %>
+            <h2 id="titulo-alerta"><%= alerta.titulo %></h2>
+            <p id="p-alerta"><%= alerta.parrafo %></p>
+            <button id="button-alerta" onclick="ocultarAlerta()">Aceptar</button>
+        </div>
+    </div>
+  <% } %>
+  
+  <script>
+    function ocultarAlerta() {
+        document.getElementById('alertaContainer').style.display = 'none';
+    }
+  </script>

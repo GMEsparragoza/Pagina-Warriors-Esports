@@ -1,0 +1,256 @@
+* {
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    background-color: #f1af5d;
+}
+
+.navbar ul {
+    width: 100%;
+    height: 100%;
+    list-style: none;
+    padding: 0;
+    display: flex;
+    transition: all 0.3s;
+    text-decoration: none;
+    color: #111111;
+    font-size: 1.5rem;
+    justify-content: end;
+}
+
+.navbar li {
+    padding: 0 1.5rem;
+}
+
+.navbar li:hover{
+    transform: scale(1.1);
+  }
+
+.logo{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 0 0.5rem;
+}
+
+.logo img{
+    height: 60px;
+    margin: 10px;
+    width: auto;
+    transition: all 0.3s;
+    border: 2px solid #111111;
+    border-radius: 50%;
+}
+
+.logo img:hover{
+    transform: scale(1.2);
+}
+
+.navbar .sidebarbig {
+    height: 100%;
+    padding: 0 70px;
+    text-decoration: none;
+    align-items: center;
+    color: #f1af5d;
+    margin-top: 3px;
+}
+
+.nav-titulo{
+    color: rgb(0, 0, 0);
+    transition: all 0.3s;
+    font-weight: 700;
+    cursor: pointer;
+    width: 200px;
+}
+
+.nav-titulo:hover{
+    transform: scale(1.1);
+}
+
+.nav-titulo a:link, .nav-titulo a:visited {
+    text-decoration: none;
+    color: #000000;
+}
+
+.Boton-SideBar {
+    display: none;
+}
+
+.side-nav-titulo{
+    color: rgb(255, 255, 255);
+    transition: all 0.3s;
+    text-shadow: -1px -1px 3px rgb(28, 28, 28);
+    cursor: pointer;
+}
+
+.side-nav-titulo:hover{
+    transform: scale(1.1);
+}
+
+.side-nav-titulo a:link, .side-nav-titulo a:visited {
+    text-decoration: none;
+    color: #ffffff;
+}
+.sidebar{
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 250vh;
+    width: 350px;
+    background-color: rgba(0, 0, 0, 0.267);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+    z-index: 3;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    font-size: larger;
+    padding: 0;
+}
+
+.sidebar li {
+    height: 70px;
+    transition: all 0.3s;
+}
+   
+.sidebar a {
+    height: 100%;
+    width: 100%;
+    padding: 0px 10px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+   
+.sidebar a::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #f1af5d;
+    border-radius: 5px;
+    transform: scaleX(0);
+    transition-duration: .3s;
+}
+
+.sidebar a:hover::after{
+    transform: scaleX(1);
+}
+
+.sidebarbig{
+    filter: invert(23%) sepia(93%) saturate(6573%) hue-rotate(356deg) brightness(103%) contrast(124%);
+    transition: all 0.3s;
+}
+
+.sidebarbig:hover{
+    filter: invert(95%) sepia(45%) saturate(802%) hue-rotate(177deg) brightness(111%) contrast(97%);
+    transform: scale(1.1);
+}
+
+.sidebarbig2{
+    filter: invert(95%) sepia(45%) saturate(802%) hue-rotate(177deg) brightness(111%) contrast(97%);
+    transition: all 0.3s;
+}
+
+.sidebarbig2:hover{
+    filter: invert(23%) sepia(93%) saturate(6573%) hue-rotate(356deg) brightness(103%) contrast(124%);
+    transform: scale(1.1);
+}
+
+.menu-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    margin: 4px 30px 0 0;
+}
+
+.bar {
+    width: 100%;
+    height: 4px;
+    background-color: #333;
+    border-radius: 2px;
+    display: flex;
+}
+
+
+/* Estilos generales para el botón */
+.x-button {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+/* Estilo para las líneas de la "X" */
+.x-button::before,
+.x-button::after {
+    content: '';
+    position: absolute;
+    width: 35px;
+    height: 5px;
+    background-color: rgb(255, 255, 255);
+}
+
+/* Rotar la primera línea */
+.x-button::before {
+    transform: rotate(45deg);
+}
+
+/* Rotar la segunda línea */
+.x-button::after {
+    transform: rotate(-45deg);
+}
+
+.x-button:hover {
+    transform: scale(1.2);
+}
+
+#navbar {
+    margin-bottom: 80px;
+}
+
+@media (max-width: 1050px){
+    .sidebar {
+        width: 100%;
+    }
+    .logo img:hover{
+        transform: scale(1.0);
+    }
+    .nav-titulo:hover{
+        transform: scale(1.0);
+    }
+    .side-nav-titulo:hover{
+        transform: scale(1.0);
+    }
+    .hideOnmobile{
+        display: none;
+    }
+    .Boton-SideBar {
+        display: flex;
+    }
+}

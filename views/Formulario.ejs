@@ -1,0 +1,59 @@
+<%- include("templates/head", {
+    titulo: "Formulario",
+    css: "form.css"
+})  %>
+    
+<%- include('templates/alerta')  %>
+
+<%- include('templates/NavBar') %>
+    
+    <section id="auth-section" class="auth-section">
+        <div class="container">
+            <div class="form-box">
+                <div class="button-box">
+                    <div id="btn"></div>
+                    <input type="button" value="Players" class="toggle-btn" id="butPlayer" onclick="toggleForm('Player')">
+                    <input type="button" value="Staff" class="toggle-btn" id="butStaff" onclick="toggleForm('Staff')">
+                </div>
+                <form id="PlayerForm" class="input-group active" action="/submitPlayers" method="POST">
+                    <input class="input-field" type="text" name="nombre" placeholder="Nombre">
+                    <input class="input-field" type="text" name="apellido" placeholder="Apellido">
+                    <input class="input-field" type="number" name="edad" placeholder="Edad">
+                    <input class="input-field" type="text" name="nick" placeholder="Nick">
+                    <input class="input-field" type="url" name="twitter" placeholder="Twitter">
+                    <input class="input-field" type="text" name="rangoActual" placeholder="Rango Actual">
+                    <input class="input-field"type="text" name="rangoPeak" placeholder="Rango Maximo">
+                    <input class="input-field" type="text" name="roles" placeholder="Roles">
+                    <input class="input-field" type="text" name="experiencia" placeholder="Experiencia">
+                    <input type="submit" class="submit-btn" value="Enviar">
+                </form>
+                <form id="StaffForm" class="input-group" action="/submitStaff" method="POST">
+                    <input class="input-field" type="text" name="nombre" placeholder="Nombre">
+                    <input class="input-field" type="text" name="apellido" placeholder="Apellido">
+                    <input class="input-field" type="number" name="edad" placeholder="Edad">
+                    <input class="input-field" type="text" name="nick" placeholder="Nick">
+                    <input class="input-field" type="url" name="twitter" placeholder="Twitter">
+                    <select name="rol" class="RolStaff" id="RolStaff">
+                        <option value="0">Selecciona</option>
+                        <option value="1">Co-Ceo</option>
+                        <option value="2">Director Deportivo</option>
+                        <option value="3">Manager</option>
+                        <option value="4">Psicologo Deportivo</option>
+                        <option value="5">Proyect Manager</option>
+                        <option value="6">Community Manager</option>
+                        <option value="7">Head Coach</option>
+                        <option value="8">Assistant Coach</option>
+                        <option value="9">Performance Coach</option>
+                        <option value="10">Analista</option>
+                    </select>
+                    <input class="input-field" type="text" name="experiencia" placeholder="Experiencia">
+                    <input type="submit" class="submit-btn" value="Enviar">
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+    <script src="scripts/selecForm.js"></script>
+    
+    <%- include("templates/footer") %>

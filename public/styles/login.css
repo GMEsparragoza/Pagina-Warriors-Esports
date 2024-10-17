@@ -1,0 +1,140 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: #111;
+}
+
+.auth-section {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 380px;
+    height: auto;
+    position: relative;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 0 20px #f1ae5d49;
+}
+
+.form-box {
+    width: 100%;
+    height: 100%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.button-box {
+    width: 220px;
+    margin-bottom: 35px;
+    position: relative;
+    box-shadow: 0 0 20px 9px #f1ae5d58;
+    border-radius: 30px;
+    display: flex;
+}
+
+
+.toggle-btn {
+    padding: 10px;
+    background: transparent;
+    border: 0;
+    outline: none;
+    position: relative;
+    color: #000000;
+    flex: 1;
+    z-index: 1;
+    font-size: 16px;
+    font-weight: bolder;
+}
+
+#btn {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #fab764, #f6a43e);
+    border-radius: 30px;
+    transition: .5s;
+}
+
+.input-group {
+    width: 100%;
+    transition: .5s;
+    display: block;
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px 0;
+    margin: 5px 0;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    outline: none;
+    background: transparent;
+    color: #fff;
+}
+
+.input-field::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto 0;
+    background: linear-gradient(to right, #fab764, #f6a43e);
+    border: 0;
+    outline: none;
+    border-radius: 30px;
+    color: #000000;
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.field-posts {
+    width: 100%;
+    padding: 10px 0;
+    margin: 5px 0;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    outline: none;
+    background: transparent;
+    color: #fff;
+}
+
+.field-posts::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+#butPlayer {
+    color: #000;
+}
+
+#butStaff {
+    color: #edededcd;
+}

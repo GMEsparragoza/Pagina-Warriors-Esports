@@ -1,0 +1,327 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: #111;
+}
+
+.auth-section {
+    height: 30vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 150px 0;
+    margin: 100px auto 50px auto;
+    border-bottom: 3px solid #f1af5d;
+}
+
+.Post-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    border-bottom: 3px solid #f1af5d;
+    padding: 20px;
+    margin: 20px auto;
+}
+
+.Roster-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    border-bottom: 3px solid #f1af5d;
+    padding: 20px;
+    margin: 20px auto;
+}
+
+.Usuario-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    border-bottom: 3px solid #f1af5d;
+    padding: 20px;
+    margin: 20px auto;
+}
+
+.admins-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 20px;
+    margin: 20px auto;
+}
+
+.container {
+    width: 380px;
+    height: auto;
+    position: relative;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 0 20px #f1ae5d49;
+}
+
+.form-box {
+    width: 100%;
+    height: 100%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.titulo-form {
+    color: #fff;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.button-box {
+    width: 220px;
+    margin-bottom: 35px;
+    position: relative;
+    box-shadow: 0 0 20px 9px #f1ae5d58;
+    border-radius: 30px;
+    display: flex;
+}
+
+
+.toggle-btn {
+    padding: 10px;
+    background: transparent;
+    border: 0;
+    outline: none;
+    position: relative;
+    color: #000000;
+    flex: 1;
+    z-index: 1;
+    font-size: 16px;
+    font-weight: bolder;
+}
+
+#btn-validar {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 110px;
+    height: 100%;
+    background: linear-gradient(to right, #fab764, #f6a43e);
+    border-radius: 30px;
+    transition: .5s;
+}
+
+.input-group {
+    width: 100%;
+    transition: .5s;
+    display: block;
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px 0;
+    margin: 5px 0;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    outline: none;
+    background: transparent;
+    color: #fff;
+}
+
+.input-field::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto 0;
+    background: linear-gradient(to right, #fab764, #f6a43e);
+    border: 0;
+    outline: none;
+    border-radius: 30px;
+    color: #000000;
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+}
+
+.submit-btn:hover {
+    background: linear-gradient(to right, #f6a43e, #fab764);
+    box-shadow: 0 4px 12px rgba(246, 164, 62, 0.4);
+    transform: translateY(-2px);
+}
+
+.admin {
+    color: #fff;
+    text-align: center;
+    border-bottom: 2px solid #f1af5d;
+}
+
+
+.menuCerrar h2 {
+    color: #fff;
+    text-align: center;
+    margin: 15px;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.group-posts {
+    width: 100%;
+    transition: .5s;
+    display: none;
+}
+
+.group-posts.active {
+    display: block;
+}
+
+.field-posts {
+    width: 100%;
+    padding: 10px 0;
+    margin: 5px 0;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    outline: none;
+    background: transparent;
+    color: #fff;
+}
+
+.field-posts::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+#butPlayerValidar {
+    color: #000000;
+}
+
+#butStaffValidar {
+    color: #edededcd;
+}
+
+#butPlayerValidar:hover {
+    cursor: pointer;
+}
+
+#butStaffValidar:hover {
+    cursor: pointer;
+}
+
+
+#btn-Modificar {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 110px;
+    height: 100%;
+    background: linear-gradient(to right, #fab764, #f6a43e);
+    border-radius: 30px;
+    transition: .5s;
+}
+
+#butPlayerModificar {
+    color: #000000;
+}
+
+#butStaffModificar {
+    color: #edededcd;
+}
+
+#butPlayerModificar:hover {
+    cursor: pointer;
+}
+
+#butStaffModificar:hover {
+    cursor: pointer;
+}
+
+
+
+#btn-Eliminar {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 110px;
+    height: 100%;
+    background: linear-gradient(to right, #fab764, #f6a43e);
+    border-radius: 30px;
+    transition: .5s;
+}
+
+#butPlayerEliminar {
+    color: #000000;
+}
+
+#butStaffEliminar {
+    color: #edededcd;
+}
+
+#butPlayerEliminar:hover {
+    cursor: pointer;
+}
+
+#butStaffEliminar:hover {
+    cursor: pointer;
+}
+
+
+@media (max-width: 768px){
+    .container{
+    margin: 20px 0;
+    }
+}
+
+#btn-Validar {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #fab764, #f6a43e);
+    border-radius: 30px;
+    transition: .5s;
+}
+
+#btn-admin {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 110px;
+    height: 100%;
+    background: linear-gradient(to right, #fab764, #f6a43e);
+    border-radius: 30px;
+    transition: .5s;
+}
+
+#butRegistrarAdmin {
+    color: #000000;
+}
+
+#butModificarAdmin {
+    color: #edededcd;
+}
+
+#butRegistrarAdmin:hover {
+    cursor: pointer;
+}
+
+#butModificarAdmin:hover {
+    cursor: pointer;
+}

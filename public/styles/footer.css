@@ -1,0 +1,99 @@
+/* Estilos generales del footer */
+.footer {
+    background-color: #000; /* Fondo negro */
+    color: #fff; /* Texto blanco */
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 20px;
+    flex-wrap: wrap; /* Permite que los elementos se acomoden en varias filas en pantallas pequeñas */
+}
+
+/* Estilo de la sección del CEO */
+.footer-ceo, .footer-redes {
+    flex: 1 1 300px; /* Se ajusta para tener al menos 300px de ancho, pero puede crecer */
+    margin: 10px;
+    box-sizing: border-box;
+}
+
+.footer-ceo h3, .footer-redes h3 {
+    color: #f1af5d; /* Título en dorado */
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.footer-ceo p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Estilo de las redes sociales */
+.social-links {
+    list-style: none;
+    padding: 0;
+}
+
+.social-links li {
+    margin-bottom: 10px;
+}
+
+.social-links a {
+    text-decoration: none;
+    color: #fff; /* Texto blanco */
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #f1af5d; /* Cambia a dorado al hacer hover */
+}
+
+/* Estilo de la sección de derechos de autor */
+.footer-copyright {
+    border-top: 1px solid #f1af5d; /* Línea divisoria dorada */
+    padding-top: 10px;
+    text-align: center;
+    width: 100%;
+}
+
+.footer-copyright p {
+    margin: 0;
+    font-size: 14px;
+    color: #f1af5d; /* Texto dorado */
+}
+
+/* Responsividad con media queries */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column; /* Los elementos se apilan verticalmente en pantallas pequeñas */
+        align-items: center;
+    }
+
+    .footer-ceo, .footer-redes {
+        flex: 1 1 100%; /* Ocupa todo el ancho del contenedor en pantallas pequeñas */
+        text-align: center; /* Centra el texto en pantallas pequeñas */
+    }
+
+    .social-links a {
+        font-size: 16px; /* Reduce el tamaño del texto en los enlaces sociales */
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-ceo p, .social-links a {
+        font-size: 14px; /* Reduce el tamaño del texto en pantallas más pequeñas */
+    }
+
+    .footer h3 {
+        font-size: 18px; /* Ajusta el tamaño del encabezado en pantallas más pequeñas */
+    }
+}

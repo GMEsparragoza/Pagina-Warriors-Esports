@@ -1,0 +1,23 @@
+<%- include("templates/head", {
+    titulo: "Equipos",
+    css: "equipos.css"
+})  %>
+
+<script>
+    let listaUsuarios=[];
+    listaUsuarios = <%- JSON.stringify(Gente) %>;
+    let listaEquipos=[];
+    listaEquipos = <%- JSON.stringify(Rosters) %>;
+</script>
+
+<%- include('templates/NavBar') %>
+
+<main>
+    <div class="RostersContainer">
+    </div>
+</main>
+
+<script src="/scripts/Equipos.js"></script>
+<%- include("templates/footer") %>
+
+

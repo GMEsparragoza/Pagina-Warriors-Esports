@@ -1,0 +1,46 @@
+<%- include("templates/head", {
+    titulo: "Login",
+    css: "login.css"
+})  %>
+
+
+    <%- include('templates/NavBar') %>
+
+    <%- include('templates/alerta')  %>
+
+    <section id="auth-section" class="auth-section">
+        <div class="container">
+            <div class="form-box">
+                <div class="button-box">
+                    <div id="btn"></div>
+                    <input type="button" value="Iniciar Sesión" class="toggle-btn">
+                </div>
+                <form id="loginForm" class="input-group" action="/auth" method="POST">
+                    <input type="email" name="email" class="input-field" placeholder="Email">
+                    <input type="password" name="password" class="input-field" placeholder="Contraseña">
+                    <input type="submit" class="submit-btn" value="Iniciar Sesión">
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Función para eliminar los parámetros de la query string sin recargar la página
+        function clearUrlParameters() {
+            const url = new URL(window.location.href);
+            
+            // Verifica si hay parámetros en la URL
+            if (url.search) {
+                // Elimina los parámetros
+                window.history.replaceState(null, null, url.pathname);
+            }
+        }
+        
+        window.onload = () => {
+            // Llama a la función después de que la página se haya cargado
+            clearUrlParameters();
+        };
+    </script>
+
+</body>
+</html>

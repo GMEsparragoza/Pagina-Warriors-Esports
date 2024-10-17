@@ -1,0 +1,234 @@
+<%- include("templates/head", {
+    titulo: "administracion",
+    css: "sesion.css"
+}) %>
+
+<%- include('templates/NavBar') %>
+
+<%- include('templates/alerta')  %>
+
+    <section id="auth-section" class="auth-section">
+        <div class="container">
+            <form id="loginForm" class="input-group">
+                <h1 class="admin">Bienvenido al Area de Administracion</h1>
+                <div class="menuCerrar">
+                     <h2>Usuario Conectado es:</h2><h2 id="nombre"></h2>
+                    <a href="/logout" class="submit-btn" id="logout" onclick="CerrarSesion()">Cerrar Sesion</a>
+                </div>
+            </form>
+        </div>
+    </section>
+    
+    <section class="Post-section">
+        <div class="agregarPostulaciones">
+            <div class="container">
+                <div class="form-box">
+                    <div class="titulo-form">
+                        <h1>Agregar Postulaciones</h1>
+                    </div>
+                    <div class="button-box">
+                        <div id="btn-validar"></div>
+                        <input type="button" value="Players" class="toggle-btn" id="butPlayerValidar" onclick="toggleFormValidar('Player')">
+                        <input type="button" value="Staff" class="toggle-btn" id="butStaffValidar" onclick="toggleFormValidar('Staff')">
+                    </div>
+                    <form id="ValidarPlayerPost" class="group-posts active" action="/ValidarPostPlayers" method="POST">
+                        <input class="field-posts"type="number" name="idPost" placeholder="ID Postulacion:">
+                        <input class="field-posts"type="text" name="rango" placeholder="Rango:">
+                        <input class="field-posts" type="number" name="edadMinima" placeholder="Edad Minima:">
+                        <input class="field-posts" type="text" name="experiencia" placeholder="Experiencia (1-Si/0-No):">
+                        <input class="field-posts" type="text" name="rol" placeholder="Rol:">
+                        <input class="field-posts" type="text" name="horario" placeholder="Horario:">
+                        <input type="submit" class="submit-btn" value="Agregar">
+                    </form>
+                    <form id="ValidarStaffPost" class="group-posts" action="/ValidarPostStaff" method="POST">
+                        <input class="field-posts"type="number" name="idPost" placeholder="ID Postulacion:">
+                        <input class="field-posts" type="number" name="edadMinima" placeholder="Edad Minima:">
+                        <input class="field-posts" type="text" name="experiencia" placeholder="Experiencia (1-Si/0-No):">
+                        <input class="field-posts" type="text" name="rol" placeholder="Rol:">
+                        <input class="field-posts" type="text" name="horario" placeholder="Horario:">
+                        <input type="submit" class="submit-btn" value="Agregar">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="modificarPostulaciones">
+            <div class="container">
+                <div class="form-box">
+                    <div class="titulo-form">
+                        <h1>Modificar Postulaciones</h1>
+                    </div>
+                    <div class="button-box">
+                        <div id="btn-Modificar"></div>
+                        <input type="button" value="Players" class="toggle-btn" id="butPlayerModificar" onclick="toggleFormModificar('Player')">
+                        <input type="button" value="Staff" class="toggle-btn" id="butStaffModificar" onclick="toggleFormModificar('Staff')">
+                    </div>
+                    <form id="ModificarPlayerPost" class="group-posts active" action="/ModificarPostPlayers" method="POST">
+                        <input class="field-posts"type="number" name="idPost" placeholder="ID Postulacion:">
+                        <input class="field-posts"type="text" name="rango" placeholder="Rango:">
+                        <input class="field-posts" type="number" name="edadMinima" placeholder="Edad Minima:">
+                        <input class="field-posts" type="text" name="experiencia" placeholder="Experiencia (1-Si/0-No):">
+                        <input class="field-posts" type="text" name="rol" placeholder="Rol:">
+                        <input class="field-posts" type="text" name="horario" placeholder="Horario:">
+                        <input type="submit" class="submit-btn" value="Modificar">
+                    </form>
+                    <form id="ModificarStaffPost" class="group-posts" action="/ModificarPostStaff" method="POST">
+                        <input class="field-posts"type="number" name="idPost" placeholder="ID Postulacion:">
+                        <input class="field-posts" type="number" name="edadMinima" placeholder="Edad Minima:">
+                        <input class="field-posts" type="text" name="experiencia" placeholder="Experiencia (1-Si/0-No):">
+                        <input class="field-posts" type="text" name="rol" placeholder="Rol:">
+                        <input class="field-posts" type="text" name="horario" placeholder="Horario:">
+                        <input type="submit" class="submit-btn" value="Modificar">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="eliminarPostulaciones">
+            <div class="container">
+                <div class="form-box">
+                    <div class="titulo-form">
+                        <h1>Eliminar Postulaciones</h1>
+                    </div>
+                    <div class="button-box">
+                        <div id="btn-Eliminar"></div>
+                        <input type="button" value="Players" class="toggle-btn" id="butPlayerEliminar" onclick="toggleFormEliminar('Player')">
+                        <input type="button" value="Staff" class="toggle-btn" id="butStaffEliminar" onclick="toggleFormEliminar('Staff')">
+                    </div>
+                    <form id="EliminarPlayerPost" class="group-posts active" action="/EliminarPostPlayers" method="POST">
+                        <input class="field-posts"type="number" name="idPost" placeholder="ID Postulacion:">
+                        <input type="submit" class="submit-btn" value="Eliminar">
+                    </form>
+                    <form id="EliminarStaffPost" class="group-posts" action="/EliminarPostStaff" method="POST">
+                        <input class="field-posts"type="number" name="idPost" placeholder="ID Postulacion:">
+                        <input type="submit" class="submit-btn" value="Eliminar">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="Roster-section">
+        <div class="AgregarRoster">
+            <div class="container">
+                <div class="form-box">
+                    <div class="titulo-form">
+                        <h1>Agregar Roster</h1>
+                    </div>
+                    <form id="ValidarRoster" class="group-posts active" action="/ValidarRoster" method="POST">
+                        <input class="field-posts"type="number" name="idRoster" placeholder="ID Roster:">
+                        <input class="field-posts"type="text" name="nombreRoster" placeholder="Nombre:">
+                        <input class="field-posts" type="text" name="descripcion" placeholder="Descripcion:">
+                        <input type="submit" class="submit-btn" value="Agregar">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="ModificarRoster">
+            <div class="container">
+                <div class="form-box">
+                    <div class="titulo-form">
+                        <h1>Modificar Roster</h1>
+                    </div>
+                    <form id="ModificarRoster" class="group-posts active" action="/ModificarRoster" method="POST">
+                        <input class="field-posts"type="number" name="idRoster" placeholder="ID Roster:">
+                        <input class="field-posts"type="text" name="nombreRoster" placeholder="Nombre:">
+                        <input class="field-posts" type="text" name="descripcion" placeholder="Descripcion:">
+                        <input type="submit" class="submit-btn" value="Modificar">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="Usuario-section">
+        <div class="AgregarUsuario">
+            <div class="container">
+                <div class="form-box">
+                    <div class="titulo-form">
+                        <h1>Agregar Usuario</h1>
+                    </div>
+                    <form id="ValidarUsuario" class="group-posts active" action="/ValidarUsuario" method="POST">
+                        <input class="field-posts"type="number" name="idUser" placeholder="ID Usuario:">
+                        <input class="field-posts"type="text" name="nick" placeholder="Nick:">
+                        <input class="field-posts"type="text" name="nombre" placeholder="Nombre:">
+                        <input class="field-posts"type="text" name="apellido" placeholder="Apellido:">
+                        <input class="field-posts"type="number" name="idRoster" placeholder="ID Roster:">
+                        <input class="field-posts" type="text" name="experiencia" placeholder="Experiencia:">
+                        <input class="field-posts" type="text" name="descripcion" placeholder="Descripcion:">
+                        <input class="field-posts" type="text" name="rol" placeholder="Rol:">
+                        <input type="submit" class="submit-btn" value="Agregar">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="ModificarUsuario">
+            <div class="container">
+                <div class="form-box">
+                    <div class="titulo-form">
+                        <h1>Modificar Usuario</h1>
+                    </div>
+                    <form id="ModificarUsuario" class="group-posts active" action="/ModificarUsuario" method="POST">
+                        <input class="field-posts"type="number" name="idUser" placeholder="ID Usuario:">
+                        <input class="field-posts"type="text" name="nick" placeholder="Nick:">
+                        <input class="field-posts"type="text" name="nombre" placeholder="Nombre:">
+                        <input class="field-posts"type="text" name="apellido" placeholder="Apellido:">
+                        <input class="field-posts"type="number" name="idRoster" placeholder="ID Roster:">
+                        <input class="field-posts" type="text" name="experiencia" placeholder="Experiencia:">
+                        <input class="field-posts" type="text" name="descripcion" placeholder="Descripcion:">
+                        <input class="field-posts" type="text" name="rol" placeholder="Rol:">
+                        <input type="submit" class="submit-btn" value="Modificar">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="EliminarUsuario">
+            <div class="container">
+                <div class="form-box">
+                    <div class="titulo-form">
+                        <h1>Eliminar Usuario</h1>
+                    </div>
+                    <form id="EliminarUsuario" class="group-posts active" action="/EliminarUsuario" method="POST">
+                        <input class="field-posts"type="number" name="idUser" placeholder="ID Usuario:">
+                        <input type="submit" class="submit-btn" value="Eliminar">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="admins-section">
+        <div class="registrarAdmin">
+            <div class="container">
+                <div class="form-box">
+                    <div class="titulo-form">
+                        <h1>Administradores</h1>
+                    </div>
+                    <div class="button-box">
+                        <div id="btn-admin"></div>
+                        <input type="button" value="Registrar" class="toggle-btn" id="butRegistrarAdmin" onclick="toggleFormRegistrar('Registrar')">
+                        <input type="button" value="Modificar" class="toggle-btn" id="butModificarAdmin" onclick="toggleFormRegistrar('Modificar')">
+                    </div>
+                    <form id="RegisterForm" class="group-posts active" action="/registrarAdmin" method="POST">
+                        <input type="text" name="username" class="input-field" placeholder="Usuario:">
+                        <input type="email" name="email" class="input-field" placeholder="Email:">
+                        <input type="password" name="password" class="input-field" placeholder="Contraseña:">
+                        <input type="submit" class="submit-btn" value="Registrar">
+                    </form>
+                    <form id="ModificarForm" class="group-posts" action="/modificarAdmin" method="POST">
+                        <input type="text" name="username" class="input-field" placeholder="Usuario:">
+                        <input type="email" name="email" class="input-field" placeholder="Email:">
+                        <input type="password" name="password" class="input-field" placeholder="Contraseña:">
+                        <input type="submit" class="submit-btn" value="Modificar">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="modificarAdmin">
+
+        </div>
+    </section>
+    
+</body>
+<script src="/scripts/admin.js"></script>
+<script src="/scripts/adminPosts.js"></script>
+<script src="/scripts/administradores.js"></script>
+</html>

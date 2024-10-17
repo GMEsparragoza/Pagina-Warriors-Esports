@@ -1,0 +1,124 @@
+body {
+    background-color: #f1af5d;
+    margin: 0;
+}
+
+
+#Postulaciones {
+    background-color: #cbcbcb;
+    width: 95%;
+    margin: 100px auto 20px auto;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+.PostulacionesHTML {
+    display: flex;
+    justify-content: center;
+    align-items: stretch; /* Cambiado de flex-start a stretch */
+    margin: 40px auto;
+    padding: 20px;
+    width: 80%;
+    flex-wrap: wrap;
+    gap: 30px;
+    box-sizing: border-box;
+}
+
+.Post {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    flex-basis: calc(33.333% - 20px);
+    border: 1px solid #f00;
+    border-radius: 20px;
+    background-color: #111111;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Media queries para hacer el diseño responsive */
+@media (max-width: 1092px) {
+    .Post {
+        flex-basis: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 768px) {
+    .Post {
+        flex-basis: 100%;
+    }
+    .PostulacionesHTML{
+        width: 95%;
+    }
+}
+
+.Post img {
+    height: auto;
+    width: 100px;
+    margin: 20px 0;
+    border: 2px solid #111111;
+    border-radius: 50%;
+}
+
+.Post h2, .Post h3 {
+    color: #f1af5d;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.Post h2 {
+    font-size: 35px;
+    border-bottom: 3px solid #f1af5d;
+}
+
+.Post h3 {
+    font-size: 25px;
+}
+
+.Post p {
+    color: #ffffff;
+    font-size: 16px;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.Requisitos {
+    padding: 20px;
+    flex-grow: 1; /* Añadido para que ocupe el espacio disponible */
+    display: flex;
+    flex-direction: column;
+}
+
+.btn-post {
+    width: 100%;
+    padding: 10px 30px;
+    cursor: pointer;
+    margin: 20px auto 0;
+    background: linear-gradient(to right, #fab764, #f6a43e);
+    border: 0;
+    outline: none;
+    border-radius: 30px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+/* Esto @media nos permite que cuando un celular o tablet entre a la pagina, se oculte la navbar exceptuando el logo y el "abrir" de la side bar, asi solo se usa la side bar*/
+
+@media(max-width: 1050px){  
+    .Post button:hover {
+        border: none;
+        border-radius: 0;
+        background-color: #111111;
+        transform: scale(1.0);
+    }
+}
+
+.no-postulaciones {
+    text-align: center;
+    font-size: 50px;
+    color: #666;
+    margin-top: 20px;
+    padding: 200px 0;
+}

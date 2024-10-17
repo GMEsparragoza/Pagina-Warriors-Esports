@@ -1,0 +1,21 @@
+<%- include("templates/head", {
+    titulo: "Postulaciones",
+    css: "postulaciones.css"
+}) %>
+
+<%- include('templates/NavBar') %>
+
+<script>
+    let listaPostulacionesPlayers=[];
+    listaPostulacionesPlayers = <%- JSON.stringify(PostPlayers) %>;
+    let listaPostulacionesStaff=[];
+    listaPostulacionesStaff = <%- JSON.stringify(PostStaff) %>;
+</script>
+
+<section id="Postulaciones">
+    <div class="PostulacionesHTML">
+    </div>
+</section>
+
+<script src="/scripts/Postulaciones.js"></script>
+<%- include("templates/footer") %>

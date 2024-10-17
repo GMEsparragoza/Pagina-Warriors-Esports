@@ -1,0 +1,35 @@
+<%- include("templates/head", {
+    titulo: "Perfil",
+    css: "perfil.css"
+}) %>
+
+<script>
+    let Usuario;
+    Usuario = <%- JSON.stringify(Gente) %>;
+    console.log(Usuario);
+</script>
+
+<%- include('templates/NavBar') %>
+
+<div class="profile-container">
+    <div class="profile-header">
+        <img src="/img/Logo Warriors.jpeg" alt="Foto de perfil" class="profile-image">
+        <div class="profile-info">
+            <h1 id="userName"></h1>
+            <p id="userNick"></p>
+            <span class="profile-role" id="userRole"></span>
+        </div>
+    </div>
+    <div class="profile-section">
+        <h2>Descripción</h2>
+        <p id="userDescription"></p>
+    </div>
+    <div class="profile-section">
+        <h2>Experiencia</h2>
+        <div id="userExperience"></div>
+    </div>
+</div>
+
+<script src="/scripts/perfil.js"></script>
+
+<%- include("templates/footer") %>
